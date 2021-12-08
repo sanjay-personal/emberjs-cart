@@ -1,0 +1,27 @@
+.cart-icon {
+    color: gray;
+    // background: white;
+    &:hover {
+        text-decoration: none;
+        color: gray;
+    }
+}
+
+
+.total {
+    border: 1px dashed black
+}
+
+span.countIcon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    position: absolute;
+    top: 84px;
+    right: 8px;
+    background-color: red;
+    color: white;
+    font-size: large;
+    justify-content: center;
+}

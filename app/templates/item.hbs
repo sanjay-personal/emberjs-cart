@@ -1,0 +1,33 @@
+
+
+<GeneralContainer>
+    {{!--
+    <Product /> --}}
+    {{!-- OR --}}
+   
+
+    <div class="container">
+        <div class="row ProductInnerLine mb-5">
+            <Product::Image @dynamicImg={{this.imgsrc}} />
+
+            <Product::Details 
+            @isDetails = {{true}}
+            @productName={{this.model.name}} 
+            @color={{this.color}} 
+            @colorss={{this.model.colors}} 
+            @productInfo={{this.model.price}}  
+            @onChangeColor={{this.onChangeColor}}
+            />
+
+
+        </div>
+    </div>
+    <section class="container">
+        <h5 class="mt-5">Features</h5>
+        <ul>
+       {{#each this.model.features as |feature|}}
+           <li>{{feature}}</li>
+       {{/each}}
+        </ul>
+    </section>
+</GeneralContainer>

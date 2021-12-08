@@ -1,0 +1,12 @@
+<LinkTo @route="cart" class="d-flex justify-content-end p-2 cart-icon">
+  <i class="fa fa-5x fa-shopping-cart icon"></i> 
+  {{#if this.shoppingCartService.cartList.length}}
+    
+  <span class="countIcon">{{ this.shoppingCartService.cartList.length}}</span>
+  {{/if}}
+
+</LinkTo>
+
+<main class="ml-3">
+  {{yield}}
+</main>

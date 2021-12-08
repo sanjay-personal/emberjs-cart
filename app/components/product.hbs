@@ -1,0 +1,17 @@
+    {{!-- <h1>Number: {{this.numberCount}} </h1> --}}
+    {{!-- <button class="btn btn-success" {{on "click" this.addnumber}}>ADD</button> --}}
+    
+    <div class="ProductOuterLine">
+    <LinkTo @route="item" @model={{@product.id}} class="link">
+    
+    <div class="container">
+        <div class="row ProductInnerLine mb-5">
+            
+            <Product::Image @dynamicImg={{this.productImage}} />
+            
+            <Product::Details @productName={{@product.name}} @productInfo={{@product.price}}/>
+          
+        </div>
+    </div>
+    </LinkTo>
+    </div>

@@ -1,0 +1,23 @@
+import Controller from '@ember/controller';
+import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
+
+export default class ItemController extends Controller {
+  @tracked color = this.model.colors[0].color;
+  // @tracked colorB = '';
+  // @tracked imgsrc = this.model.colors.find(({ color }) => color === this.color)
+  //     .image;
+
+  get imgsrc() {
+    return this.model.colors.find(({ color }) => color === this.color).image;
+  }
+
+  @action
+  onChangeColor(newColor) {
+    console.log('newColor', newColor);
+    this.color = newColor;
+    // this.imgsrc = this.model.colors.find(
+    //     ({ color }) => color === this.color
+    // ).image;
+  }
+}

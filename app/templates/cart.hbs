@@ -1,0 +1,64 @@
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <LinkTo @route="index">Home</LinkTo>
+    </li>
+    <li class="breadcrumb-item active">Shopping Cart</li>
+</ol>
+<h4>View Cart</h4>
+
+<section>
+    <div class="table-responsive">
+    <table class="table table-hover customeTable">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Image</th>
+
+      <th scope="col">ProductName</th>
+      <th scope="col">Color</th>
+      <th scope="col">Price</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    
+        {{#each cartList as |item index|}}
+        <tr >
+      <td scope="row" class="font-weight-bold">{{index}}</td>
+      <td class="w-25"><img class="img-fluid customeimagewidth img-thumbnail" src={{item.image}} /></td>
+
+
+      <td scope="row" class="font-weight-bold">{{item.productName}}</td>
+      <td>{{item.color}}</td>
+      <td>{{ currency item.price 'en-IN'}}</td>
+
+
+    </tr>
+        {{/each}}
+            
+  </tbody>
+</table>
+</div>
+</section>
+
+<section class="d-flex justify-content-end mr-3">
+    <div class="d-block">
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 ">SubTotal</div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">{{currency this.subTotal 'en-IN'}}</div>
+        </div>
+        <div class="row bordertop">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">Tax</div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">{{currency this.tax 'en-IN'}}</div>
+        </div>
+        <div class="row font-weight-bold total">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 ">Total</div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">{{currency this.total 'en-IN'}}</div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-success mt-3 text-end" type="button">Submit</button>
+        </div>
+    </div>
+
+</section>
