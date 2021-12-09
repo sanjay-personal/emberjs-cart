@@ -6,7 +6,7 @@ export const products = [
       'With up to 40 hours of battery life, Beats Solo Wireless is your perfect everyday headphone',
     price: {
       original: 199.95,
-      current: 99.98,
+      current: 100.0,
     },
     features: [
       'High-performance wireless noise cancelling headphones in red',
@@ -34,8 +34,8 @@ export const products = [
     description:
       'Debuting in 1982, the AF1 was the first basketball shoe to house Nike Air, revolutionizing the game while rapidly gaining traction around the world.',
     price: {
-      original: 109.95,
-      current: 89.98,
+      original: 300.95,
+      current: 200.0,
     },
     features: [
       'Full-grain leather in the upper adds a premium look and feel.',

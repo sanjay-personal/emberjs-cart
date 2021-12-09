@@ -17,7 +17,11 @@
 
       <th scope="col">ProductName</th>
       <th scope="col">Color</th>
+      <th scope="col">Quantity</th>
+
       <th scope="col">Price</th>
+      <th scope="col">Total</th>
+
 
     </tr>
   </thead>
@@ -31,8 +35,16 @@
 
       <td scope="row" class="font-weight-bold">{{item.productName}}</td>
       <td>{{item.color}}</td>
-      <td>{{ currency item.price 'en-IN'}}</td>
+      <td>{{ item.count}}<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-success">+</button>
+  <button type="button" class="btn btn-danger">-</button>
+</div></td>
 
+      <td>{{ currency item.price 'en-IN'}}</td>
+      
+      {{#let ( multiplication item.price item.count) as |totalItemPrice|}} <td>{{ currency totalItemPrice 'en-IN'}}</td> {{/let}}
+
+      
 
     </tr>
         {{/each}}

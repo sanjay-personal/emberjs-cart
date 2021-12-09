@@ -6,9 +6,11 @@ export default class CartController extends Controller {
   // @service shoppingCart;
 
   get subTotal() {
-    console.log("servicee",this.shoppingCartService.cartList)
-    return this.shoppingCartService.cartList.reduce((acc, cur) => acc + cur['price'], 0);
-
+    console.log('servicee', this.shoppingCartService.cartList);
+    return this.shoppingCartService.cartList.reduce(
+      (acc, cur) => acc + cur['price'] * cur['count'],
+      0
+    );
   }
   get tax() {
     return this.subTotal * 0.09;
@@ -17,6 +19,6 @@ export default class CartController extends Controller {
     return this.subTotal + this.tax;
   }
   get cartList() {
-    return this.shoppingCartService.cartList
+    return this.shoppingCartService.cartList;
   }
 }
